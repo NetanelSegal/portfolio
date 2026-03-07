@@ -1,6 +1,6 @@
 # Data Schema — Dynamic Career Engine
 
-Per PRD §6.1. Implement with Prisma.
+Per PRD §6.1. Implemented in [prisma/schema.prisma](../../prisma/schema.prisma).
 
 ## Blocks Table
 

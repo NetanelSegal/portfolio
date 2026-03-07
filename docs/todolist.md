@@ -7,7 +7,7 @@ Single source of truth for pending tasks. Update checkboxes when tasks are compl
 ## Epic 1: Foundation (Sprint 0–1)
 
 - [x] **S0.1** Set up Next.js, Prisma, PostgreSQL, Tailwind, shadcn, Storybook
-- [ ] **S0.2** Define Prisma schema: Blocks, Instances, Overrides (per PRD §6.1)
+- [x] **S0.2** Define Prisma schema: Blocks, Instances, Overrides (per PRD §6.1)
 - [ ] **S0.3** Auth: protect `/admin/` routes
 - [ ] **S0.4** Basic layout: dashboard shell + public portfolio shell
 
