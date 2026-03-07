@@ -1,0 +1,57 @@
+---
+description: Storybook — verify components with all variants before finishing UI work
+alwaysApply: false
+---
+
+# Storybook Rule — Component Verification
+
+When building or modifying UI components, use Storybook to verify all variants and states.
+
+## When to Use
+
+- **New components:** Add a story file alongside or in `*.stories.tsx` before considering the component done.
+- **Modified components:** Update existing stories and add new variants if the component gained new props or states.
+- **shadcn components:** Add stories for each shadcn component you use, covering all variants (e.g. Button: default, destructive, outline, ghost, link, sizes).
+
+## Requirements
+
+1. **Stories for every UI component** — Each reusable component in `components/` (especially `components/ui/`) must have at least one Storybook story.
+2. **Cover all variants** — Document every prop-driven variant (e.g. `variant`, `size`, `state`). Use `argTypes` and `args` to make variants explorable.
+3. **Verify in Storybook before finishing** — Run `npm run storybook`, open each story, and confirm all variants render correctly with the design system (dark theme, accent, fonts).
+
+## Story File Convention
+
+- Co-locate: `Button.stories.tsx` next to `Button.tsx`, or
+- Centralize: `components/ui/Button.stories.tsx` in the same folder as the component.
+
+## Workflow Integration
+
+Storybook verification is part of the **Test** step in [workflow.mdc](.cursor/rules/workflow.mdc). Before marking a task complete:
+
+- [ ] All new/modified components have Storybook stories
+- [ ] All variants are documented and render correctly
+- [ ] `npm run storybook` runs and stories pass (no console errors)
+
+## Example (shadcn Button)
+
+```tsx
+// components/ui/button.stories.tsx
+import type { Meta, StoryObj } from '@storybook/react';
+import { Button } from './button';
+
+const meta: Meta<typeof Button> = {
+  component: Button,
+  tags: ['autodocs'],
+};
+export default meta;
+
+type Story = StoryObj<typeof Button>;
+
+export const Default: Story = { args: { children: 'Button' } };
+export const Destructive: Story = { args: { variant: 'destructive', children: 'Delete' } };
+export const Outline: Story = { args: { variant: 'outline', children: 'Outline' } };
+export const Ghost: Story = { args: { variant: 'ghost', children: 'Ghost' } };
+export const Link: Story = { args: { variant: 'link', children: 'Link' } };
+export const Small: Story = { args: { size: 'sm', children: 'Small' } };
+export const Large: Story = { args: { size: 'lg', children: 'Large' } };
+```

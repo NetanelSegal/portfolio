@@ -1,0 +1,62 @@
+---
+description: Task implementation workflow — subtasks, branch, implement, test, docs, commit
+alwaysApply: true
+---
+
+# Workflow Role — Task Implementation
+
+When implementing a task, follow this workflow strictly. Do not skip steps.
+
+## 1. Plan & Track
+
+- **Break into subtasks:** Split the task into concrete subtasks (e.g. "Add API route", "Add form component", "Wire up mutation").
+- **Identify parallel work:** Mark which subtasks have no dependencies on each other and can be implemented in parallel.
+- **Update task progress:** Add subtasks to the current task section in `docs/todolist.md` or a temporary progress note so progress is visible.
+
+## 2. Create Git Branch
+
+- Create a branch named by task ID and short slug: `task/S0.1-setup-nextjs` or `task/V1-blocks-crud`.
+- Base off `main` (or default branch). Use `git checkout -b task/<ID>-<slug>`.
+
+## 3. Implement
+
+- **Parallel subtasks:** If subtasks can run in parallel (no shared state or ordering dependencies), spawn subagents for each using `mcp_task`. Launch multiple subagents in a single message to run them concurrently. Each subagent gets a focused scope (e.g. one subtask) and returns when done.
+- **Sequential subtasks:** Implement dependent subtasks in order.
+- Follow architecture in `docs/04-Architecture`, tech stack in `docs/02-Frameworks/tech-stack.md`, and PRD in `docs/03-PRDs/PRD.md`.
+
+## 4. Test (All Sides)
+
+- **Unit tests:** Run and add/update as needed.
+- **Integration tests:** Run and verify.
+- **E2E tests:** Run if applicable.
+- **Build:** Run `npm run build` (or project build command) — must succeed.
+- **Storybook:** For UI components — add/update stories for all variants, run `npm run storybook`, and verify each component renders correctly. See [storybook.mdc](.cursor/rules/storybook.mdc).
+- **Browser:** Manually verify in browser or use browser automation; confirm UI and flows work.
+
+## 5. Mark Completed & Log
+
+- Check off the task in `docs/todolist.md` (`- [x]`).
+- Add a row to `docs/process.md` with: Date, Task ID, brief description, links to relevant code/docs.
+
+## 6. Update Docs
+
+- Ensure `docs/` reflects changes: update `docs/04-Architecture`, `docs/06-Development`, or other folders if schema, APIs, or behavior changed.
+- Update `docs/process.md` with the summary from step 5.
+
+## 7. Commit & Push
+
+- Stage all changes: `git add .`
+- Commit with message: `feat(<ID>): <short description>` (e.g. `feat(S0.1): set up Next.js, Prisma, Tailwind, shadcn`)
+- Push to GitHub: `git push -u origin <branch-name>`
+
+## Checklist (verify before finishing)
+
+- [ ] Subtasks defined and tracked (parallel vs sequential identified)
+- [ ] Parallel subtasks delegated to subagents where applicable
+- [ ] Branch created
+- [ ] Implementation done
+- [ ] All tests pass + build succeeds + Storybook verified (components) + browser verified
+- [ ] `todolist.md` updated (task checked)
+- [ ] `process.md` updated (summary added)
+- [ ] Docs updated if needed
+- [ ] Committed and pushed to GitHub

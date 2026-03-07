@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name — Full-Stack Engineer & Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/preview.css">
+    <style>
+        .full-page { min-height: 100vh; }
+        .full-page .website-header { max-width: 720px; margin: 0 auto; padding-left: 1.5rem; padding-right: 1.5rem; }
+        .full-page .content { max-width: 720px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+        .full-page .website-header { border-bottom-color: rgba(30, 41, 59, 0.5); }
+        .full-page .website-hero { padding: 4rem 0 3rem; }
+        .full-page .website-hero-title { font-size: clamp(2rem, 5vw, 2.75rem); }
+        .full-page .website-hero-sub { font-size: 1.125rem; }
+        .full-page .section { padding: 3rem 0; border-bottom: 1px solid var(--color-border); }
+        .full-page .section:last-of-type { border-bottom: none; }
+        .full-page .section-title { font-family: var(--ds-font-heading); font-size: 0.75rem; font-weight: 600; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.5rem; }
+        .full-page .project-card { max-width: none; }
+        .full-page .showcase-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+        .full-page .layout-statement-list { border: none; padding: 0; background: transparent; }
+        .full-page .layout-statement-list__item { border-bottom-color: var(--color-border); }
+        .full-page .footer { padding: 2rem 0; text-align: center; font-size: 0.8125rem; color: var(--color-text-muted); }
+        .full-page .footer a { color: var(--color-accent); text-decoration: none; }
+    </style>
+</head>
+<body class="full-page">
+    <div class="bg-grain-mesh">
+        <div class="bg-grain-mesh__orbs" aria-hidden="true">
+            <div class="bg-grain-mesh__orb"></div>
+            <div class="bg-grain-mesh__orb"></div>
+            <div class="bg-grain-mesh__orb"></div>
+            <div class="bg-grain-mesh__orb"></div>
+            <div class="bg-grain-mesh__orb"></div>
+        </div>
+        <div class="bg-grain-mesh__grain" aria-hidden="true"></div>
+        <div class="bg-grain-mesh__content">
+            <header class="website-header">
+                <span class="website-logo">Your Name</span>
+                <nav class="website-nav">
+                    <a href="#projects">Projects</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </header>
+
+            <main class="content">
+                <section class="website-hero">
+                    <h1 class="website-hero-title">Full‑Stack Engineer & Designer</h1>
+                    <p class="website-hero-sub">One vault. Infinite variants. AI-tailored for every role.</p>
+                    <div class="website-stats">
+                        <span>95%+ ATS</span>
+                        <span>&lt;20m Entry</span>
+                        <span>∞ Variants</span>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="#contact" class="btn btn--primary">Get in touch</a>
+                        <a href="#projects" class="btn btn--secondary" style="margin-left: 0.5rem;">View work</a>
+                    </div>
+                </section>
+
+                <section class="section" id="projects">
+                    <h2 class="section-title">Projects</h2>
+                    <div class="showcase-grid showcase-grid--modern">
+                        <article class="project-card project-card--modern">
+                            <div class="project-card__media"><img src="https://picsum.photos/seed/p1/400/320" alt=""></div>
+                            <div class="project-card__body">
+                                <h3 class="project-card__title">E-commerce Platform Migration</h3>
+                                <p class="project-card__meta">2023 · Lead · Next.js</p>
+                                <p class="project-card__desc">Migrated Angular to Next.js. Reduced bundle 40%, improved LCP.</p>
+                                <div class="project-card__tags"><span>dev</span><span>Next.js</span></div>
+                            </div>
+                        </article>
+                        <article class="project-card project-card--modern">
+                            <div class="project-card__media"><img src="https://picsum.photos/seed/p2/400/320" alt=""></div>
+                            <div class="project-card__body">
+                                <h3 class="project-card__title">Design System</h3>
+                                <p class="project-card__meta">2022 · Solo</p>
+                                <p class="project-card__desc">Tokens, components, patterns. Used across 4 products.</p>
+                                <div class="project-card__tags"><span>design</span></div>
+                            </div>
+                        </article>
+                        <article class="project-card project-card--modern">
+                            <div class="project-card__media"><img src="https://picsum.photos/seed/p3/400/320" alt=""></div>
+                            <div class="project-card__body">
+                                <h3 class="project-card__title">API Platform</h3>
+                                <p class="project-card__meta">2024 · Lead</p>
+                                <p class="project-card__desc">REST + GraphQL. Auth, rate limits, docs.</p>
+                                <div class="project-card__tags"><span>dev</span><span>API</span></div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="section" id="experience">
+                    <h2 class="section-title">Selected Work</h2>
+                    <div class="layout-statement-list">
+                        <a href="#" class="layout-statement-list__item" style="text-decoration:none; color:inherit;">
+                            <h3 class="layout-statement-list__title">E-commerce Platform Migration</h3>
+                            <span class="layout-statement-list__meta">2023 · Next.js</span>
+                        </a>
+                        <a href="#" class="layout-statement-list__item" style="text-decoration:none; color:inherit;">
+                            <h3 class="layout-statement-list__title">Design System</h3>
+                            <span class="layout-statement-list__meta">2022</span>
+                        </a>
+                        <a href="#" class="layout-statement-list__item" style="text-decoration:none; color:inherit;">
+                            <h3 class="layout-statement-list__title">API Platform</h3>
+                            <span class="layout-statement-list__meta">2024</span>
+                        </a>
+                        <a href="#" class="layout-statement-list__item" style="text-decoration:none; color:inherit;">
+                            <h3 class="layout-statement-list__title">Mobile App</h3>
+                            <span class="layout-statement-list__meta">2023</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="section" id="contact">
+                    <h2 class="section-title">Contact</h2>
+                    <div class="chips" style="margin-bottom: 1rem;">
+                        <a href="#" class="chip">/dev</a>
+                        <a href="#" class="chip chip--accent">/design</a>
+                        <a href="#" class="chip">/mentor</a>
+                    </div>
+                    <p style="font-size: 0.9375rem; color: var(--color-text-muted); margin-bottom: 1rem;">One vault. Infinite variants. AI-tailored for every role.</p>
+                    <a href="mailto:hello@example.com" class="btn btn--primary">hello@example.com</a>
+                </section>
+
+                <footer class="footer">
+                    <p>Built with Dynamic Career Engine · <a href="../preview.html">Design system</a></p>
+                </footer>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

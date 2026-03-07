@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System — Dynamic Career Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/preview.css">
+    <style>
+        .preview-page { max-width: 720px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+        .preview-page h1 { font-family: var(--ds-font-heading); font-size: 1.75rem; margin: 0 0 0.5rem; }
+        .preview-page .subtitle { font-size: 0.9375rem; color: var(--color-text-muted); margin-bottom: 2rem; }
+        .preview-section { margin-bottom: 2.5rem; }
+        .preview-section h2 { font-family: var(--ds-font-heading); font-size: 0.75rem; font-weight: 600; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
+        .preview-section .desc { font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 1rem; }
+        .preview-block { margin-bottom: 1.5rem; }
+        .preview-block h3 { font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="bg-grain-mesh">
+        <div class="bg-grain-mesh__orbs" aria-hidden="true">
+            <div class="bg-grain-mesh__orb"></div>
+            <div class="bg-grain-mesh__orb"></div>
+            <div class="bg-grain-mesh__orb"></div>
+            <div class="bg-grain-mesh__orb"></div>
+            <div class="bg-grain-mesh__orb"></div>
+        </div>
+        <div class="bg-grain-mesh__grain" aria-hidden="true"></div>
+        <div class="bg-grain-mesh__content">
+            <header class="website-header" style="max-width:720px; margin:0 auto; padding:1rem 1.5rem; border-bottom:1px solid rgba(30,41,59,0.5); backdrop-filter:blur(12px);">
+                <span class="website-logo">Design System</span>
+                <nav class="website-nav">
+                    <a href="#foundations">Foundations</a>
+                    <a href="#components">Components</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#patterns">Patterns</a>
+                    <a href="pages/full-page-example.html">Full example →</a>
+                </nav>
+            </header>
+            <div class="page">
+                <div class="preview-page">
+                    <h1>Design System</h1>
+                    <p class="subtitle">Dynamic Career Engine — all design decisions in one place.</p>
+
+            <!-- Foundations -->
+            <section class="preview-section" id="foundations">
+                <h2>Foundations</h2>
+                <div class="preview-block">
+                    <h3>Colors</h3>
+                    <div class="color-swatches">
+                        <div class="swatch"><div class="swatch-block" style="background:#0a0f1a"></div><span>#0a0f1a</span></div>
+                        <div class="swatch"><div class="swatch-block" style="background:#0d121e"></div><span>#0d121e</span></div>
+                        <div class="swatch"><div class="swatch-block" style="background:#1e293b"></div><span>#1e293b</span></div>
+                        <div class="swatch"><div class="swatch-block" style="background:#f8fafc"></div><span>#f8fafc</span></div>
+                        <div class="swatch"><div class="swatch-block" style="background:#94a3b8"></div><span>#94a3b8</span></div>
+                        <div class="swatch"><div class="swatch-block" style="background:#49acf5"></div><span>#49acf5</span></div>
+                    </div>
+                </div>
+                <div class="preview-block">
+                    <h3>Elevation</h3>
+                    <div class="elevation-demo">
+                        <div class="elevation-card elevation-1"><span class="elevation-label">Cards</span><code>--shadow-1</code></div>
+                        <div class="elevation-card elevation-2"><span class="elevation-label">Dropdowns</span><code>--shadow-2</code></div>
+                        <div class="elevation-card elevation-3"><span class="elevation-label">Modals</span><code>--shadow-3</code></div>
+                    </div>
+                </div>
+                <div class="preview-block">
+                    <h3>Shadow only (no borders)</h3>
+                    <div class="ds-component-row">
+                        <div class="card" style="max-width:200px;"><div class="card__title">Card</div><div class="card__meta">Shadow only</div></div>
+                        <input type="text" class="input" placeholder="Input" style="max-width:180px;">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Components -->
+            <section class="preview-section" id="components">
+                <h2>Components</h2>
+                <div class="preview-block">
+                    <h3>Buttons</h3>
+                    <div class="ds-component-row">
+                        <button class="btn btn--primary">Primary</button>
+                        <button class="btn btn--secondary">Secondary</button>
+                        <button class="btn btn--ghost">Ghost</button>
+                    </div>
+                </div>
+                <div class="preview-block">
+                    <h3>Input</h3>
+                    <input type="text" class="input" placeholder="Paste job description…" style="max-width:360px;">
+                </div>
+                <div class="preview-block">
+                    <h3>Alert</h3>
+                    <div class="alert">AI suggests 3 keyword optimizations.</div>
+                </div>
+                <div class="preview-block">
+                    <h3>Card</h3>
+                    <div class="card" style="max-width:360px;">
+                        <div class="card__title">E-commerce Platform Migration</div>
+                        <div class="card__meta">2023 · Lead</div>
+                        <div class="card__body">Migrated Angular to Next.js. Reduced bundle 40%.</div>
+                        <div class="card__tags"><span class="tag">dev</span><span class="tag tag--accent">Next.js</span></div>
+                    </div>
+                </div>
+                <div class="preview-block">
+                    <h3>Tabs · Chips · Stats</h3>
+                    <div class="tabs" style="margin-bottom:1rem;">
+                        <button class="tabs__tab">Experience</button>
+                        <button class="tabs__tab tabs__tab--active">Project</button>
+                        <button class="tabs__tab">Education</button>
+                    </div>
+                    <div class="chips" style="margin-bottom:1rem;">
+                        <a href="#" class="chip">/dev</a>
+                        <a href="#" class="chip chip--accent">/design</a>
+                        <a href="#" class="chip">/mentor</a>
+                    </div>
+                    <div class="stats" style="max-width:400px;">
+                        <div class="stat"><span class="stat__val">95%+</span><span class="stat__lbl">ATS</span></div>
+                        <div class="stat"><span class="stat__val">&lt;20m</span><span class="stat__lbl">Entry</span></div>
+                        <div class="stat"><span class="stat__val">∞</span><span class="stat__lbl">Vars</span></div>
+                    </div>
+                </div>
+                <div class="preview-block">
+                    <h3>Avatar · Badge</h3>
+                    <div class="ds-component-row" style="align-items:center; gap:var(--space-4);">
+                        <div class="avatar-wrap"><div class="avatar avatar--sm">JD</div><span class="badge"></span></div>
+                        <div class="avatar-wrap"><div class="avatar">AB</div><span class="badge badge--success"></span></div>
+                        <div class="avatar-wrap"><div class="avatar avatar--lg">XY</div><span class="badge badge--warning"></span></div>
+                    </div>
+                </div>
+                <div class="preview-block">
+                    <h3>Dropdown · Modal</h3>
+                    <div class="dropdown" id="dropdown-demo">
+                        <button class="btn btn--secondary" type="button" aria-haspopup="true" aria-expanded="false">Actions ▾</button>
+                        <div class="dropdown__menu" role="menu">
+                            <button class="dropdown__item" role="menuitem">Edit</button>
+                            <button class="dropdown__item" role="menuitem">Delete</button>
+                        </div>
+                    </div>
+                    <button class="btn btn--primary" type="button" onclick="document.getElementById('modal-demo').classList.add('modal-backdrop--open')" style="margin-left:0.5rem;">Open modal</button>
+                    <div class="modal-backdrop" id="modal-demo" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+                        <div class="modal">
+                            <h3 class="modal__title" id="modal-title">Confirm action</h3>
+                            <p class="modal__body">Are you sure you want to proceed?</p>
+                            <div class="modal__actions">
+                                <button class="btn btn--ghost" onclick="document.getElementById('modal-demo').classList.remove('modal-backdrop--open')">Cancel</button>
+                                <button class="btn btn--primary" onclick="document.getElementById('modal-demo').classList.remove('modal-backdrop--open')">Confirm</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio -->
+            <section class="preview-section" id="portfolio">
+                <h2>Portfolio — Project Cards (Modern)</h2>
+                <p class="desc">Overlap + full-bleed, gradient overlay.</p>
+                <div class="showcase-grid showcase-grid--modern" style="max-width:900px;">
+                    <article class="project-card project-card--modern">
+                        <div class="project-card__media"><img src="https://picsum.photos/seed/m1/400/320" alt=""></div>
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">E-commerce Platform Migration</h3>
+                            <p class="project-card__meta">2023 · Lead · Next.js</p>
+                            <p class="project-card__desc">Migrated Angular to Next.js. Reduced bundle 40%.</p>
+                            <div class="project-card__tags"><span>dev</span><span>Next.js</span></div>
+                        </div>
+                    </article>
+                    <article class="project-card project-card--modern">
+                        <div class="project-card__media"><img src="https://picsum.photos/seed/m2/400/320" alt=""></div>
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">Design System</h3>
+                            <p class="project-card__meta">2022 · Solo</p>
+                            <p class="project-card__desc">Tokens, components, patterns.</p>
+                            <div class="project-card__tags"><span>design</span></div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Layouts -->
+            <section class="preview-section">
+                <h2>Layouts</h2>
+                <div class="preview-block">
+                    <h3>Statement list</h3>
+                    <div class="layout-statement-list" style="border:1px solid var(--color-border); border-radius:var(--radius-lg); padding:0 var(--space-5); background:var(--color-bg);">
+                        <a href="#" class="layout-statement-list__item" style="text-decoration:none; color:inherit;">
+                            <h3 class="layout-statement-list__title">E-commerce Platform Migration</h3>
+                            <span class="layout-statement-list__meta">2023 · Next.js</span>
+                        </a>
+                        <a href="#" class="layout-statement-list__item" style="text-decoration:none; color:inherit;">
+                            <h3 class="layout-statement-list__title">Design System</h3>
+                            <span class="layout-statement-list__meta">2022</span>
+                        </a>
+                        <a href="#" class="layout-statement-list__item" style="text-decoration:none; color:inherit;">
+                            <h3 class="layout-statement-list__title">API Platform</h3>
+                            <span class="layout-statement-list__meta">2024</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Patterns -->
+            <section class="preview-section" id="patterns">
+                <h2>Patterns</h2>
+                <div class="preview-block">
+                    <h3>Form · Empty state · Loading</h3>
+                    <div class="pattern-form" style="max-width:360px; margin-bottom:1rem;">
+                        <label for="jd" class="form-label">Job description</label>
+                        <input id="jd" type="text" class="input input--error" placeholder="Paste job description…" aria-invalid="true" aria-describedby="err">
+                        <p id="err" class="form-error" role="alert">Paste at least 50 characters.</p>
+                    </div>
+                    <div class="empty-state" style="max-width:320px; margin-bottom:1rem;">
+                        <div class="empty-state__icon" aria-hidden="true">📦</div>
+                        <h4 class="empty-state__title">No blocks yet</h4>
+                        <p class="empty-state__text">Add your first experience or project.</p>
+                        <button class="btn btn--primary">Add block</button>
+                    </div>
+                    <div style="display:flex; gap:1rem;">
+                        <div class="skeleton skeleton--card" style="width:200px; height:120px;"></div>
+                        <div class="skeleton skeleton--card" style="width:200px; height:120px;"></div>
+                    </div>
+                </div>
+                <div class="preview-block">
+                    <h3>Navigation</h3>
+                    <div class="nav-header" style="max-width:480px; margin-bottom:1rem;">
+                        <span class="nav-header__logo">Dynamic Career Engine</span>
+                        <nav class="nav-header__links">
+                            <a href="#" class="active">Vault</a>
+                            <a href="#">Apply</a>
+                            <a href="#">Settings</a>
+                        </nav>
+                    </div>
+                    <nav class="breadcrumbs" aria-label="Breadcrumb">
+                        <a href="#">Vault</a>
+                        <span class="breadcrumbs__sep">/</span>
+                        <a href="#">Blocks</a>
+                        <span class="breadcrumbs__sep">/</span>
+                        <span class="breadcrumbs__current">E-commerce Migration</span>
+                    </nav>
+                </div>
+                <div class="preview-block">
+                    <h3>Decorative — Organic blobs + grain</h3>
+                    <div class="deco-situation deco-hero" style="min-height:140px;">
+                        <div class="deco-shape--blob deco-shape--blob-1"></div>
+                        <div class="deco-shape--blob deco-shape--blob-2"></div>
+                        <div style="position:relative; z-index:1; padding:2rem;">
+                            <h2 style="font-family:var(--ds-font-heading); font-size:1.25rem; margin:0 0 0.5rem;">Full‑Stack Engineer</h2>
+                            <p style="font-size:0.875rem; color:var(--color-text-muted); margin:0;">One vault. Infinite variants.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Full page example -->
+            <section class="preview-section">
+                <h2>Full page example</h2>
+                <a href="pages/full-page-example.html" class="btn btn--primary">View complete website →</a>
+            </section>
+        </div>
+    </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('dropdown-demo').addEventListener('click', function(e) {
+            if (e.target.closest('button[aria-haspopup]')) {
+                this.classList.toggle('dropdown--open');
+                this.querySelector('button').setAttribute('aria-expanded', this.classList.contains('dropdown--open'));
+            } else if (e.target.closest('.dropdown__item')) {
+                this.classList.remove('dropdown--open');
+                this.querySelector('button').setAttribute('aria-expanded', 'false');
+            }
+        });
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('#dropdown-demo')) {
+                document.getElementById('dropdown-demo').classList.remove('dropdown--open');
+            }
+        });
+        document.getElementById('modal-demo').addEventListener('click', function(e) {
+            if (e.target === this) this.classList.remove('modal-backdrop--open');
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') document.getElementById('modal-demo').classList.remove('modal-backdrop--open');
+        });
+    </script>
+</body>
+</html>
