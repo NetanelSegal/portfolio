@@ -11,3 +11,52 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+enum BlockType {
+  Experience
+  Project
+  Education
+  Skill
+  Certification
+}
+
+model Block {
+  id         String     @id @default(cuid())
+  type       BlockType
+  title      String
+  body       String     @db.Text
+  date_start DateTime?  @db.Date
+  date_end   DateTime?  @db.Date
+  tags       String[]   @default([])
+  media_urls String[]   @default([])
+  visible    Boolean    @default(true)
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+
+  overrides Override[]
+}
+
+model Instance {
+  id            String   @id @default(cuid())
+  category_slug String   @unique
+  settings      Json     // { seo_title, seo_desc }
+  tag_ids       String[] @default([])
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  overrides Override[]
+}
+
+model Override {
+  id            String   @id @default(cuid())
+  instance_id   String
+  block_id      String
+  modified_body String   @db.Text
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  instance Instance @relation(fields: [instance_id], references: [id], onDelete: Cascade)
+  block    Block    @relation(fields: [block_id], references: [id], onDelete: Cascade)
+
+  @@unique([instance_id, block_id])
+}
