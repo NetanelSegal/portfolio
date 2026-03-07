@@ -9,6 +9,8 @@ Development rules, coding standards, implementation guides, and feature-specific
 
 **Workflow Role:** `.cursor/rules/workflow.mdc` — When implementing tasks: subtasks → branch → implement → test (unit, integration, E2E, build, **Storybook**, browser) → mark completed + process summary → update docs → commit & push to GitHub.
 
+**Deployment:** [deployment.md](deployment.md) — Vercel setup, Git/GitHub workflow, environment variables.
+
 **Storybook Rule:** `.cursor/rules/storybook.mdc` — All UI components must have Storybook stories covering all variants. Verify in Storybook before finishing component work.
 
 Add development rules, coding standards, and implementation guides below as the project evolves.
