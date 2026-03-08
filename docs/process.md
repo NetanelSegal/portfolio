@@ -10,6 +10,7 @@ Chronological log of completed features, decisions made, and sprint summaries. U
 
 | Date | Task ID | Description | Links |
 |------|---------|-------------|-------|
+| 2026-03-08 | S0.3 | Auth: Auth.js v5, GitHub OAuth, email allowlist. Protect /admin/ via layout. JWT sessions, no User model. | [src/auth.ts](src/auth.ts), [src/app/admin/](src/app/admin/), [docs/04-Architecture/auth.md](docs/04-Architecture/auth.md) |
 | 2026-03-07 | S0.2 | Prisma schema: BlockType enum, Block, Instance, Override models. Relations with cascade delete. Unique (instance_id, block_id) on Override. Run `prisma migrate dev` when DATABASE_URL is configured. | [prisma/schema.prisma](prisma/schema.prisma), [docs/04-Architecture/schema.md](docs/04-Architecture/schema.md) |
 | 2026-03-07 | — | Migrated to `src/` folder: app, components, lib, stories. Updated tsconfig, Storybook, components.json, .gitignore. | [src/](src/) |
 | 2026-03-07 | — | Git init, GitHub remote, Vercel deployment. Workflow: branch `task/<ID>-<slug>`, commit `feat(<ID>):`, push to origin. Live: https://ai-portfolio-resume.vercel.app | [.cursor/rules/workflow.mdc](.cursor/rules/workflow.mdc), [docs/06-Development/deployment.md](docs/06-Development/deployment.md) |

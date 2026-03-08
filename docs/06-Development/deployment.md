@@ -73,12 +73,23 @@ vercel --prod     # production deployment
 
 | Variable | When to add | Notes |
 |----------|--------------|-------|
+| `AUTH_SECRET` | S0.3+ (auth) | Required. Generate with `npx auth secret`. |
+| `AUTH_GITHUB_ID` | S0.3+ (auth) | GitHub OAuth App Client ID. |
+| `AUTH_GITHUB_SECRET` | S0.3+ (auth) | GitHub OAuth App Client Secret. |
+| `ALLOWED_EMAILS` | S0.3+ (auth) | Comma-separated emails allowed to sign in (e.g. `you@example.com`). |
 | `DATABASE_URL` | When S0.2 (Prisma schema) is implemented and app uses DB | Required for DB queries. Skip for UI-only deploys. |
 
 ### Adding env vars
 
 1. Vercel Dashboard → Project → **Settings** → **Environment Variables**
 2. Add `DATABASE_URL` for Production, Preview, Development as needed
+
+### GitHub OAuth (S0.3+)
+
+1. GitHub → Settings → Developer settings → OAuth Apps → New
+2. Homepage: `http://localhost:3000` (dev) or production URL
+3. Callback: `http://localhost:3000/api/auth/callback/github` (or `https://your-domain.com/api/auth/callback/github` for prod)
+4. Copy Client ID and Client Secret to env vars
 
 ### Database options (for future S0.2+)
 
