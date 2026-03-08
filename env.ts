@@ -9,7 +9,11 @@ dotenv.config();
 const env = {
   DATABASE_URL: process.env.DATABASE_URL,
   DIRECT_URL: process.env.DIRECT_URL,
-  // Add as needed: NEXTAUTH_SECRET, OPENAI_API_KEY, etc.
+  // Auth (S0.3)
+  AUTH_SECRET: process.env.AUTH_SECRET,
+  AUTH_GITHUB_ID: process.env.AUTH_GITHUB_ID,
+  AUTH_GITHUB_SECRET: process.env.AUTH_GITHUB_SECRET,
+  ALLOWED_EMAILS: process.env.ALLOWED_EMAILS ?? "",
 } as const;
 
 export { env };

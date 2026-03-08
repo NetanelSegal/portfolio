@@ -37,6 +37,7 @@ This file is the **primary entry point** for AI assistants (Cursor `AGENTS.md`).
 6. **When in doubt:** Start with `docs/README.md` for the full navigation map.
 7. **Before starting work:** Check `docs/todolist.md` for next task; update `docs/process.md` when a feature is completed.
 8. **When implementing a task:** Follow the **Workflow** role (`.cursor/rules/workflow.mdc`): subtasks (use subagents for parallel subtasks) → branch → implement → test (all types + build + browser) → mark completed + process summary → update docs → commit & push to GitHub.
+9. **When reading env vars in server code:** Use [env.ts](env.ts) — never `process.env` directly. Add new vars to env.ts and .env.example. See `.cursor/rules/env-config.mdc`.
 
 ---
 

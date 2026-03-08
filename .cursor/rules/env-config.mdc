@@ -1,0 +1,30 @@
+---
+description: Use centralized env config for all server-side environment variables
+alwaysApply: true
+---
+
+# Env Config — Centralized Environment Variables
+
+When reading environment variables in server code (API routes, Server Components, server actions, auth, Prisma config):
+
+1. **Use [env.ts](env.ts)** — Import from `env.ts` at project root. Never use `process.env` directly in application code.
+2. **Add new vars to env.ts** — When introducing a new env variable, add it to the `env` object in [env.ts](env.ts).
+3. **Update .env.example** — Document the new variable in [.env.example](.env.example).
+
+```ts
+// env.ts
+const env = {
+  DATABASE_URL: process.env.DATABASE_URL,
+  AUTH_SECRET: process.env.AUTH_SECRET,
+  // ... add new vars here
+} as const;
+export { env };
+```
+
+```ts
+// Usage in server code
+import { env } from "../env";  // or "@/env" if path alias includes root
+// use env.AUTH_SECRET, env.DATABASE_URL, etc.
+```
+
+**Exception:** Client Components must use `NEXT_PUBLIC_*` vars directly; those are not in env.ts.

@@ -1,13 +1,19 @@
 import NextAuth from "next-auth";
 import GitHub from "next-auth/providers/github";
+import { env } from "../env";
 
-const allowedEmails = (process.env.ALLOWED_EMAILS ?? "")
-  .split(",")
+const allowedEmails = env.ALLOWED_EMAILS.split(",")
   .map((e) => e.trim().toLowerCase())
   .filter(Boolean);
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
-  providers: [GitHub],
+  secret: env.AUTH_SECRET,
+  providers: [
+    GitHub({
+      clientId: env.AUTH_GITHUB_ID,
+      clientSecret: env.AUTH_GITHUB_SECRET,
+    }),
+  ],
   callbacks: {
     signIn({ user }) {
       if (!user?.email) return false;

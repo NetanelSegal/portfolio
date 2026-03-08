@@ -11,6 +11,8 @@ Development rules, coding standards, implementation guides, and feature-specific
 
 **Deployment:** [deployment.md](deployment.md) — Vercel setup, Git/GitHub workflow, environment variables.
 
+**Env Config Rule:** `.cursor/rules/env-config.mdc` — Use [env.ts](../../env.ts) for all server-side env vars. Never use `process.env` directly. Add new vars to env.ts and .env.example.
+
 **Storybook Rule:** `.cursor/rules/storybook.mdc` — All UI components must have Storybook stories covering all variants. Verify in Storybook before finishing component work.
 
 Add development rules, coding standards, and implementation guides below as the project evolves.
